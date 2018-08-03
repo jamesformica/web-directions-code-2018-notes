@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Web Directions Code</title>
+  <link rel="stylesheet" href="tufte.css">
+</head>
+
+<body>
+  <h1>Web Directions → Code</h1>
+
+  <h2>Day 1</h2>
+
+  <h3>
+    <b>Sara Soueidan - CSS for the good of UX</b>
+  </h3>
+
+  <ul>
+    <li>use CSS variables as live changes > explore this</li>
+    <li>can be used for dynamic fonts with min/max</li>
+    <li>using viewport + fixed values is ideal
+      <code>calc(1rem + 0.5vw)</code>
+    </li>
+    <li>can be used for dynamic themes > light/dark</li>
+    <li>
+      <i>Dark theme in a day</i> > medium post to read
+    </li>
+    <li>SVG as a background image is very limited but there are cray cray work arounds</li>
+    <li>
+      <i>we are all temporarily abled</i>
+    </li>
+    <li>have you considerred using
+      <code>hsl()</code>?
+    </li>
+    <li>Using window high contrast mode to check support of your website</li>
+    <li>media queries for reduced animation / light level / high contrast</li>
+    <li>borders are important in high contrast mode</li>
+    <li>remove unneeded elements in high contrast mode</li>
+    <li>
+      <i>do not use colours to convey information</i>
+    </li>
+    <li>
+      <code>&lt;input type="color" disabled value="#aa33ff"/&gt;</code>
+    </li>
+    <li>theming is hard work</li>
+    <li>browsers are accessible by default, we are the ones that break it. dont break it</li>
+  </ul>
+
+  <h3>
+    <b>Erin Zimmer - Adventures of the Event Loop</b>
+  </h3>
+
+  <ul>
+    <li>event loop does: JS / network / timer / mouse / dom / rendering</li>
+    <li>orchastration between web apis and js engine</li>
+    <li>event loop is single threaded, web apis are threaded</li>
+    <li>render pipeline and event loop share resources</li>
+    <li>using a Web Worker do
+      <b>not</b> block the render pipeline
+    </li>
+    <li>each web worker has its own event loop but has no user interaction / render / dom</li>
+    <li>using
+      <code>rel="noopener"</code> prevents the event loop being shared
+    </li>
+    <li>micro tasks (i.e. promises) and have a higher priority and block render</li>
+    <li>requestAnimationFrame > setTimeout</li>
+    <li>animation frame queue is executre before render ~= frame rate Hz</li>
+    <li>task > micro tasks > animation queue > repaint</li>
+    <li>nodeJs does stuff slightly differently ¯\_(ツ)_/¯ its not infinite</li>
+  </ul>
+
+  <h3>
+    <b>Simon Knox - Optimistic Offline Experiences</b>
+  </h3>
+
+  <ul>
+    <li>everyone is offline at small parts of every day</li>
+    <li>
+      <i>offline is not an error</i>
+    </li>
+    <li>
+      <b>Step 0:</b> make an offline page (fun but not helpful)</li>
+    <li>
+      <b>Step 1:</b> content - serve
+      <i>stale</i> content
+    </li>
+    <li>cache the current page and predict any pages that are useful to cache too</li>
+    <li>
+      <i>be considerate of data</i>
+    </li>
+    <li>
+      <b>Step 2:</b> Forms - prevent submitting until connectivity is enabled OR retry
+    </li>
+    <li>retry 2.0 = background sync (chrome and opera only)</li>
+    <li>push notifications offline are difficult</li>
+    <li>
+      <i>going offline</i> > book to read</li>
+  </ul>
+
+  <h3>
+    <b>Phil Nash - Aggressive Web Apps</b>
+  </h3>
+
+  <ul>
+    <li>Websites make people sad and angry</li>
+    <li>~ 75% of people can receive push notification (browser support)</li>
+    <li>focus on
+      <b>good</b> push notifications
+    </li>
+    <li>reminders / chat alert / eta alerts / event updates as useful</li>
+    <li>timely, actionable, and personal is the key</li>
+    <li>make them personal by adding 'you' or 'your'</li>
+    <li>opt-out is important IN the application</li>
+    <li>stop asking for permission on arrival, without context</li>
+    <li>give users context before asking for things</li>
+    <li>WICG interventions is a good place for discussions like this</li>
+  </ul>
+
+  <h3>
+    <b>Paul Heasley - Return of the script tag</b>
+  </h3>
+
+  <ul>
+    <li>Bundling solves the early issues of lots of script tags</li>
+    <li>~ 4.5% of code is
+      <b>your</b> code, dependencies make up the rest</li>
+    <li>the bundle where 95% of code doesn't change is uncached and re-downloaded</li>
+    <li>vendor bundle is a decent solution</li>
+    <li>using CDNs is better for dependencies</li>
+    <li>native es6 modules is a much better solution with browser support (not IE)</li>
+    <li>es6 with etags allows the browser to only download the modules that have changed</li>
+    <li>use
+      <code>&lt;script nomodule /&gt;</code> as a fallback
+    </li>
+    <li>unpkg is the CDN for anything on npm</li>
+    <li>ideally request the es6 modules version from unpkg but up to owner to provide</li>
+    <li>http2 introduced connection multiplexing and other performance improvements</li>
+  </ul>
+
+  <h3>
+    <b>Hui Jing Chen - New frontier for web design</b>
+  </h3>
+
+  <ul>
+    <li>5% of people are native english speakers, but 50% of websites are in english</li>
+    <li>intrinsic web design > belonging to the essential nature of webdev</li>
+    <li>The full power of CSS comes through when used in combination with other feature</li>
+    <li>vertical text support since IE5... wow</li>
+    <li>transforms bring the element into its own layer</li>
+    <li>use
+      <code>writing-mode</code> and
+      <code>text-combine-upright</code> to achieve this
+    </li>
+    <li>new guy
+      <code>logical-properties</code> will help make sense of directions
+    </li>
+    <li>CSS-Grid can be used to do overlapping elements</li>
+    <li>
+      <code>css shapes</code> allow text to flow around arbitrary shapes like a circle
+    </li>
+    <li>
+      <code>feature queries</code> can check if the browser supports a feature in CSS
+    </li>
+    <li>really gracefull fallbacks are possible and should be harness to delivery the best UX</li>
+  </ul>
+
+  <h3>
+    <b>Craig Sharkie - Functional CSS yesterday</b>
+  </h3>
+
+  <ul>
+    <li>nobody gives a shit about CSS 😞 but also means we can do what we want 😃</li>
+    <li>first class function / higher order functions / imperative / deterministic / immutable</li>
+    <li>very loosly tying CSS to funcional programming??</li>
+    <li>JSON feed coming into your sketch files</li>
+  </ul>
+
+  <h3>
+    <b>Wing Ho - CSS animations with a dash of JS</b>
+  </h3>
+
+  <ul>
+    <li>~16.66ms time to do animation frame otherwise you'll get jank</li>
+    <li>use
+      <code>transform: translateY</code> instead of
+      <code>top: 0px</code> to increase smoothness
+    </li>
+    <li>the best place to be is in the
+      <i>composite cycle</i> for the render cycle
+    </li>
+    <li>
+      <code>will-change</code> helps but should be used sparingly
+    </li>
+    <li>
+      <code>opactiy: 0</code> is still in the dom so accessibility tools will still be able to 'see' it</li>
+    <li>
+      <code>display: none</code> and
+      <code>visibility: hidden</code> dont animate well at all
+    </li>
+    <li>
+      <code>transform: visibility</code> solves the animation problem
+    </li>
+    <li>
+      <code>addEventListener('transitionEnd')</code> then display none to achieve full result
+    </li>
+  </ul>
+
+  <h3>
+    <b>Xavier Ho - Programming Generative Art</b>
+  </h3>
+
+  <ul>
+    <li>shepherding random numbers</li>
+    <li>starting point + random offsets + accumulated random offsets</li>
+    <li>mutating L systems</li>
+    <li>string substitutes. A → AB, B → A</li>
+    <li>Randomly replace a rule on each iteration</li>
+    <li>
+      <i>embrace uncertainty</i>
+    </li>
+  </ul>
+
+  <h2>Day 2</h2>
+
+  <h3>
+    <b>Patima Tantiprasut - The art of giving a damn</b>
+  </h3>
+
+  <ul>
+    <li>what kind of developer do you want to be? Creative developer!</li>
+    <li>better devs: are slow, dont work long hours, avoid hard work, write bad code, enjoy friction</li>
+    <li>fast means building technical debt either intentionally or unintentionally</li>
+    <li>working healthy hours is healthy for people</li>
+    <li>growing is part of the job. Ego is left at the door</li>
+    <li>friction is a way to learn from each other</li>
+    <li>unrealistic work load > stres / anxiety / burnout</li>
+    <li>try to maximise the time you have for yourself</li>
+    <li>move PD into your work time to add more time for 'life'</li>
+    <li>help yourself
+      <i>before</i> trying to help others
+    </li>
+  </ul>
+
+  <h3>
+    <b>Mandy Michael - Functional HTML</b>
+  </h3>
+
+  <ul>
+    <li>we make the mistake of thinking HTLM is simple and therefore unvaluable</li>
+    <li>Burn Toast Media > amazing illustrations</li>
+    <li>
+      <i>i'm just making it functional right now</i> is a classic saying
+    </li>
+    <li>HTML is an important part of making our websites 'functional'</li>
+    <li>dom tree > document object model tree</li>
+    <li>actively choose the correct element and not always default to a
+      <code>div</code>
+    </li>
+    <li>using the correct elements provides more meaning to your page</li>
+    <li>assistive technology really benefits from semantic html elements</li>
+    <li>checkout the
+      <code>abbr</code> and
+      <code>dfn</code> elements
+    </li>
+  </ul>
+
+</body>
+
+</html>
