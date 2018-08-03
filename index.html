@@ -300,7 +300,15 @@
   </h3>
 
   <ul>
-    <li></li>
+    <li>QUIC: new internet transport protocol from Google</li>
+    <li>We need these extra layers so that applications don't have to handle it themselves</li>
+    <li>QUIC sits on top of UDP and combines all the transport layer logic</li>
+    <li>TCP performance: head of line blocking is prone in TCP</li>
+    <li>QUIC performance: remove head of line blocking, add zero round trip</li>
+    <li>TCP security: can inspect meta data at the transport layout</li>
+    <li>QUIC security: custom 'short header' that is much more secure</li>
+    <li>ossification: allow change over time by not setting the protocol in stone</li>
+    <li>ossification is done by encryption and grease. Grease makes sure it changes</li>
   </ul>
 
 </body>
