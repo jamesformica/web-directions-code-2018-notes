@@ -301,7 +301,7 @@
 
   <ul>
     <li>QUIC: new internet transport protocol from Google</li>
-    <li>We need these extra layers so that applications don't have to handle it themselves</li>
+    <li>we need these extra layers so that applications don't have to handle it themselves</li>
     <li>QUIC sits on top of UDP and combines all the transport layer logic</li>
     <li>TCP performance: head of line blocking is prone in TCP</li>
     <li>QUIC performance: remove head of line blocking, add zero round trip</li>
@@ -309,6 +309,68 @@
     <li>QUIC security: custom 'short header' that is much more secure</li>
     <li>ossification: allow change over time by not setting the protocol in stone</li>
     <li>ossification is done by encryption and grease. Grease makes sure it changes</li>
+  </ul>
+
+  <h3>
+    <b>Tim Hingston / James Baxley III - How to GraphQL</b>
+  </h3>
+
+  <ul>
+    <li>GraphQL is about describing data and then asking for it</li>
+    <li>a central schema is the single source of truth</li>
+    <li>inflection is baked into GraphQL so tooling is very powerful</li>
+    <li>only fetching the pieces of data that you want is key</li>
+    <li>left brain / right brain: open source side / product side > dogfooding their own inventions</li>
+    <li>[] = list, ! = required, type = 'table'... can make your own types</li>
+    <li>security is interesting, what if the user doesn't have access to partial data?</li>
+  </ul>
+
+  <h3>
+    <b>Michael John Peña - Blockchain for webdev</b>
+  </h3>
+
+  <ul>
+    <li>Unless something amazing i said, i am so over blockchain so wont be taking notes</li>
+  </ul>
+
+  <h3>
+    <b>Jason O'Neil - Your web page never listens to me</b>
+  </h3>
+
+  <ul>
+    <li>speech and stuff is under supported across the web and we should change that</li>
+    <li>mozilla is working hard but has a long way to go</li>
+    <li>we have the opportunity to build something amazing here</li>
+    <li>Jason is a good speaker</li>
+  </ul>
+
+  <h3>
+    <b>Marcos Caceres - The state of authentication</b>
+  </h3>
+
+  <ul>
+    <li>we sign in to get a personalised experience</li>
+    <li>we sign out for privacy and security / switch accounts</li>
+    <li>browsers store credentials against the domain in their own db</li>
+    <li>use
+      <code>autocomplete='current-password'</code> to let the browser fill in data
+    </li>
+    <li>
+      <code>navigator.credentials.get({ password: true }).then(function(r) { console.log(r) })</code>
+    </li>
+    <li>PasswordCredentials and FederatedCredential</li>
+    <li>passwords suck</li>
+    <li>face detection / fingerprint are moving towards a better future</li>
+    <li>browser support is pretty shite</li>
+    <li>YubiKey! combining credentials and finger print auth</li>
+  </ul>
+
+  <h3>
+    <b>Maximiliano Firtman - Secrets of PWA</b>
+  </h3>
+
+  <ul>
+    <li></li>
   </ul>
 
 </body>
