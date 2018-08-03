@@ -366,11 +366,39 @@
   </ul>
 
   <h3>
-    <b>Maximiliano Firtman - Secrets of PWA</b>
+    <b>Maximiliano Firtman - Secrets of PWAs</b>
   </h3>
 
   <ul>
-    <li></li>
+    <li>web apps that looks like apps on the phone</li>
+    <li>11 years ago (WWDC07) Steve Jobs talked about this</li>
+    <li>PWAs are ideal for apps that consume json and render</li>
+    <li>internal 'web view' inside apps like facebook will not work with PWA</li>
+    <li>you can try PWA on desktop by going to
+      <code>chrome://flags</code> and turning it on
+    </li>
+    <li>Web App Banner > needs to pass PWA critera. Some user engagement might also be required</li>
+    <li>Add or Install? current wording issue</li>
+    <li>need to wait for
+      <code>beforeinstallprompt</code> and then can manually trigger download</li>
+    <li>you can use the Xcode iOS simulator to test locally</li>
+    <li>Android Emulator (version 8+) needs to be port forwarded first</li>
+    <li>
+      <code>navigator.storage.persist()</code> will prevent files being delete (chrome & firefox)
+    </li>
+    <li>can use the
+      <code>start_url</code> to add a query string param so you can track who is using
+    </li>
+    <li>'visibility_change' and 'freeze' used to track when user goes away</li>
+    <li>pull to refresh can be disabled in CSS</li>
+    <li>can disable google translate by using a meta tag</li>
+    <li>link capturing also needs to be considerred (might want, might not)</li>
+    <li>iOS has many issues (i.e. getting stuck without a physical back button)</li>
+    <li>best to just remove support for iOS with
+      <code>display: brower</code> in your manifest.json for iOS devices (hard)
+    </li>
+    <li>Trusted Web Activities are coming to chrome 69 and help with notifications and such</li>
+    <li>TWA contains icons, and a certified URL, it goes on PlayStore and launches your PWA</li>
   </ul>
 
 </body>
